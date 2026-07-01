@@ -1,0 +1,20 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubevirt
+  namespace: argocd
+spec:
+  project: homelab-config
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kubevirt
+  source:
+    repoURL: https://github.com/jekorhon/homelab-k8s
+    path: apps/kubevirt/manifests
