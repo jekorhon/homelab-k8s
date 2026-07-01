@@ -16,3 +16,4 @@ spec:
   sourceRepos:
     - https://github.com/jekorhon/homelab-k8s
     - https://charts.longhorn.io/ 
+    - https://kubernetes-sigs.github.io/metrics-server/
